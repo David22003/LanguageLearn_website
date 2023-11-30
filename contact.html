@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::selection {
+            background-color: black;
+            color: aqua;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #fff;
+            background: linear-gradient(to bottom, #fdcbf1, #a18cd1, #f8a5c2);
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            animation: slideInDown 1s ease-in-out;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff;
+            color: white;
+            background: linear-gradient(to right, #fdcbf1, #a18cd1, #f8a5c2);
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .logo {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .contact-form {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 100px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #333;
+        }
+
+        .form-group button {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #555;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img class="logo"
+            src="https://images-platform.99static.com/EJyysP9opliXx3UCUDTDzT-YpZI=/0x0:2001x2001/500x500/top/smart/99designs-contests-attachments/101/101813/attachment_101813880"
+            alt="Language Learning Logo">
+        <div>
+            <a href="http://127.0.0.1:5500/learningwebsite.html#">Home</a>
+            <a href="http://127.0.0.1:5500/courses.html">Courses</a>
+            <a href="http://127.0.0.1:5500/aboutus.html#">About Us</a>
+            <a href="file:///C:/Users/admin/contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <div class="form-container">
+            <form id="contactForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var errorMessage = document.getElementById('errorMessage');
+
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                errorMessage.textContent = 'Please fill in all required fields.';
+                return false;
+            } else {
+                errorMessage.textContent = '';
+
+                document.getElementById('contactForm').submit();
+                alert('Form submitted! (This is just an example, actual form submission requires server-side processing.)');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::selection {
+            background-color: black;
+            color: aqua;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #fff;
+            background: linear-gradient(to bottom, #fdcbf1, #a18cd1, #f8a5c2);
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            animation: slideInDown 1s ease-in-out;
+            align-items: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            background: linear-gradient(to right, #fdcbf1, #a18cd1, #f8a5c2);
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .about-us-content p {
+            text-align: justify;
+        }
+        .logo {
+            max-width: 100px;
+            height: auto;
+        }
+
+        h2{
+            margin-left: 20px;
+        }
+
+        p{
+            margin-left: 40px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img class="logo"
+            src="https://images-platform.99static.com/EJyysP9opliXx3UCUDTDzT-YpZI=/0x0:2001x2001/500x500/top/smart/99designs-contests-attachments/101/101813/attachment_101813880"
+            alt="Language Learning Logo">
+        <div>
+            <a href="http://127.0.0.1:5500/learningwebsite.html#">Home</a>
+            <a href="http://127.0.0.1:5500/courses.html">Courses</a>
+            <a href="http://127.0.0.1:5500/aboutus.html#">About Us</a>
+            <a href="http://127.0.0.1:5500/contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="about-us-content">
+        <h2>About Us</h2>
+        <p>Welcome to the Language Learning Website, your one-stop destination for mastering new languages. Our mission
+            is to make language learning accessible, enjoyable, and effective for people of all ages and backgrounds.
+        </p>
+        <p>At Language Learning, we believe in the power of communication and the enrichment it brings to your personal
+            and professional life. Whether you're a beginner or looking to enhance your language skills, we offer a
+            variety of courses tailored to your learning needs.</p>
+        <p>Our team of experienced language educators is dedicated to providing high-quality content, interactive
+            lessons, and a supportive learning environment. We understand that every learner is unique, and our courses
+            are designed to accommodate different learning styles.</p>
+        <p>Explore our website, choose from a range of languages, and embark on a journey to fluency with us. If you
+            have any questions or need assistance, feel free to <a href="http://127.0.0.1:5500/contact.html">contact
+                us</a>.</p>
+        <p>Thank you for choosing Language Learning Website as your language learning partner. Happy learning!</p>
+    </div>
+
+</body>
+</html>

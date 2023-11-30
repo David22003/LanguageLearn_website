@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Website</title>
+    <style>
+        ::selection {
+            background-color: black;
+            color: aqua;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #fff;
+            background: linear-gradient(to bottom, #fdcbf1, #a18cd1, #f8a5c2);
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            animation: slideInDown 1s ease-in-out;
+            align-items: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            background: linear-gradient(to right, #fdcbf1, #a18cd1, #f8a5c2);
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .logo {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .banner {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .language-item {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .language-item img {
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .language-item h3 {
+            color: #333;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, #fdcbf1, #a18cd1, #f8a5c2);
+            animation: slideInUp 1s ease-in-out;
+
+        }
+
+        .featured-courses {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .course-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            width: 200px;
+        }
+
+        .course-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-weight: bold;
+        }
+
+        .about-us-content {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-us-content p {
+            text-align: justify;
+        }
+
+
+
+        header {
+            background-color: #413e3e;
+            color: #0a0909;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #0a0a0a;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 100px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #333;
+        }
+
+        .form-group button {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #555;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .navbar a:hover{
+            color:#7a718d;
+            text-decoration:underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img class="logo"
+            src="https://images-platform.99static.com/EJyysP9opliXx3UCUDTDzT-YpZI=/0x0:2001x2001/500x500/top/smart/99designs-contests-attachments/101/101813/attachment_101813880"
+            alt="Language Learning Logo">
+        <div>
+            <a href="http://127.0.0.1:5500/learningwebsite.html#">Home</a>
+            <a href="http://127.0.0.1:5500/courses.html">Courses</a>
+            <a href="http://127.0.0.1:5500/aboutus.html#">About Us</a>
+            <a href="http://127.0.0.1:5500/contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <h2>Learn <b>New Languages</b> Easily</h2>
+        <img class="banner" src="https://www.ultraedit.com/wp-content/uploads/2022/10/Reviews.png"
+            alt="Language Learning Banner">
+        <p style="font-weight: bold">Click on the pictures below for going directly to the playlist</p>
+
+        <div class="language-list">
+            <div class="language-item">
+                <a href="https://www.youtube.com/watch?v=xTLK0iHLxFs&list=PLsXdBvuJ5ox7U8HipGaQoS95fFcIhKRRS">
+                    <img src="https://cdn.pixabay.com/photo/2013/07/13/12/51/flag-160483_640.png" alt="English Flag">
+                </a>
+                <h3>ENGLISH</h3>
+            </div>
+
+            <div class="language-item">
+                <a href="https://www.youtube.com/watch?v=cctA8tkRY3M&list=PLOVSdvQtun0r91XZQuqk109Rjx7Dqw6nb">
+                    <img src="https://t4.ftcdn.net/jpg/01/07/44/93/360_F_107449302_euqCrt8Y4tbS1r4r00ZXtAXIq08gUOcz.webp"
+                        alt="French Flag">
+                </a>
+                <h3>FRENCH</h3>
+            </div>
+
+            <div class="language-item">
+                <a href="https://www.youtube.com/watch?v=MOtqMNKs0Jw&list=PLYzp2xhTw9W1Z9RvnCoveC0W7pkwUMHXy">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/255px-Flag_of_Germany.svg.png"
+                        alt="German Flag">
+                </a>
+                <h3>GERMAN</h3>
+            </div>
+
+            <div class="language-item">
+                <a href="https://www.youtube.com/watch?v=Yut6yU2CgUo&list=PLkaFsSywHpwe9tV7172JPN6I52ahKgEkT">
+                    <img src="data:image/png;base64,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"
+                        alt="Hindi Flag">
+                </a>
+                <h3>HINDI</h3>
+            </div>
+
+            <div class="language-item">
+                <a href="https://www.youtube.com/watch?v=8FmT4sIdZx0&list=PL5bHUTNMpoNnN5bTJwjCzRocOHDJLxmhK">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAABPCAMAAADmzqp4AAABlVBMVEWtFRn6vQD/xQCrDBm9SRb/wAD/wgCYYBChMB60ACixACnhqwCSZQyiPRyfUBeVbQn3vBvzuibqsQ3frgC3ACDWsmXuuTzBxs6vtLzzuACTcwDcpwCjfhTqtTJHSVnYqDXUpzunhjO9lSu0jBxsXj+qhySriC/Hnz/jtEOghUPBlRCIdUmDe2WXfDfSpCLrtSezk0j2swTmmAfMdxC0JSSeABuXmHfMbhWQdjrakiGlVBGcOCmhIiCAawCSSSSuURWJQhKIVgyjQj2MOBWnOkWgRU2OUhK2gwnGjAyEaiN7ZBF3aQyPeCNtYhR4UwDTmQp6MxR6Qg9uVgZsSA26dRSrZhdpPxPBgQ9tJhN2ExWFJC6QUVSZV1GIXE3Io1CvYGarq6Kxj6CzYI+uX3q3qbq8jKvMW6bhtlqoeX63ckZuU0CnepS9daLBeC2nGQCmLA20mZrNRJ+VMUxjXWGNCUBHNJFxAEycWUKaAC8nSZs0TYenbWodNp8ARKVsImI7WylYZ5DIi0y6oIhOYpplhoFfZFaskl+YyV3tAAADDUlEQVRoge3Y31fSUADAcTa7l20w44ewDTQIKRIMRSBERg6m+DMIzbAsFEOxVFhqRtoPDfXvbpPTOT2Eeg6MvdzvOeNhLx/u3e7d2XQ6FAqFQqFQKJXr0SbdPW3S4dqkw7QJuf/PqY0L+rnuu8A0YH7gGjGDbrrA7nY/9Ax6H3ke+1xPuuaahvzOAI5zwwYcfxr0D410xwWjztBYIByJPotGYuPxEDfUocm+1Z0gqQRPUkn5eE5Sk91ygwJFplJpvWicMmYilOjphisbIJeaJkSRztDPCXo6MwObp9V0oXMWKr+pufmFxcziwou5bE5hrc4OrOXWLgy/zNM4BvHc/NJyXhSFjHEGBxh8lRBXoIouZll67QdcoVDQr66+ebv27n2gWCwagGF5Odj+TLd2gd/hcGBWiiR5kuxbZ+Q2GMYHBx2O/rbZG8frDQxC2aWzeV52S9Lmh1LZB5yBgKrjxcwMawOym82kCNnd3NreLDE+YGfYStvsbS5upfhkMpmS3fL253JZnme1XWiWdj7GZ0nyU9KbkN1ddm9vixmN7++UKrh6Lgzz1RrP10kym0zSfWlJGTDDHBBEtdYTU8/Fa4TE2kKzpJg8XEgdfTk+3S3tlZnzkJ2VvkbVc7FcnWFPx+TrSx8kooffLusMU2KZSijNsNPhtjeOG9aviZHqMatIECJfPzk5OT5Vco1REltRdb+KT1UnOYOR7tUTte/eH3WhV8jQcRjWUfvtb9Ct76tYdF2ygaZrrP88ovk8LxBxaGdPqYh68wzD+8q+0XTv8xMiL9BCJBFX1m9xUs3rG//X1dOC8EsQ6KYbape9dZ/8664Iynh58dqtqLo/WwIBD+RSTXdcvqtlms9BtZ8L8Po5iDfHW91ICxQdFQju+jmopjtwJnclD1jU14zS+e80LYi8E7qV06Ntwy1dEGycNRrDEIO5cYm9uLxgS2sFDIBiQ+5KPRczYZwFtyj/AOdctqLNbcGV1cNBzgIt7bJ3fh8EnXwpu7vb8TRztfqeo9X3K62+16FQKBQKhUKp3B+1OKEr6H/Z5QAAAABJRU5ErkJggg=="
+                        alt="Spanish Flag">
+                </a>
+                <h3>SPANISH</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 Language Learning Website. All rights reserved.</p>
+    </div>
+
+    <div class="featured-courses">
+        <h2>Featured Courses</h2>
+        <div class="course-item">
+            <a href="https://www.youtube.com/watch?v=Yut6yU2CgUo&list=PLkaFsSywHpwe9tV7172JPN6I52ahKgEkT">
+                <img
+                    src="data:image/png;base64,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">
+            </a>
+            <h3>HINDI</h3>
+            <p class="description">Description of the course </p><br>
+            <p>Apart from the script and formal vocabulary, standard Hindi is mutually
+                intelligible with standard Urdu, another recognised register of Hindustani as both share a common
+                colloquial base. Hindi is the fourth most-spoken first language in the world, after Mandarin, Spanish
+                and English.</p>
+        </div>
+        
+    <div class="course-item">
+        <a href="https://www.youtube.com/watch?v=xTLK0iHLxFs&list=PLsXdBvuJ5ox7U8HipGaQoS95fFcIhKRRS"><img
+                src="https://cdn.pixabay.com/photo/2013/07/13/12/51/flag-160483_640.png" alt="Course Image">
+        </a>
+        <h3>ENGLISH</h3>
+        <p class="description">Description of the course </p><br>
+        <p>English is a West Germanic language in the Indo-European language family,
+            whose speakers, called Anglophones, originated in early medieval England. The namesake of the language
+            is the Angles, one of the ancient Germanic peoples that migrated to the island of Great Britain.</p>
+    </div>
+    <p>Why choose Language Learning?</p>
+        <ul>
+            <li><strong>Diverse Language Options:</strong> We offer courses in a variety of languages, allowing you to
+                explore and master the language of your choice.</li>
+            <li><strong>Engaging Content:</strong> Our courses feature engaging content, including videos, playlists,
+                and interactive exercises to make learning enjoyable and effective.</li>
+            <li><strong>Experienced Educators:</strong> Learn from experienced language educators who are passionate
+                about helping you succeed in your language-learning journey.</li>
+            <li><strong>Flexible Learning:</strong> Our platform provides flexibility, allowing you to learn at your own
+                pace and from the comfort of your home.</li>
+            <li><strong>Community Support:</strong> Join a community of language learners where you can connect with
+                fellow students, share experiences, and practice your language skills.</li>
+        </ul>
+        <p>Whether you're interested in improving your English, French, German, Hindi, or Spanish, we have courses
+            tailored to your needs. Explore our featured courses, connect with our community, and embark on a journey to
+            language mastery!</p>
+    </div>
+    <div class="about-us-content">
+        <h2>About Us</h2>
+        <p>Welcome to the Language Learning Website, your one-stop destination for mastering new languages. Our mission
+            is to make language learning accessible, enjoyable, and effective for people of all ages and backgrounds.
+        </p>
+        <p>At Language Learning, we believe in the power of communication and the enrichment it brings to your personal
+            and professional life. Whether you're a beginner or looking to enhance your language skills, we offer a
+            variety of courses tailored to your learning needs.</p>
+        <p>Our team of experienced language educators is dedicated to providing high-quality content, interactive
+            lessons, and a supportive learning environment. We understand that every learner is unique, and our courses
+            are designed to accommodate different learning styles.</p>
+        <p>Explore our website, choose from a range of languages, and embark on a journey to fluency with us. If you
+            have any questions or need assistance, feel free to <a href="file:///C:/Users/admin/contact.html">contact
+                us</a>.</p>
+        <p>Thank you for choosing Language Learning Website as your language learning partner. Happy learning!</p>
+    </div>
+
+    </div>
+
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <div class="form-container">
+            <form id="contactForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var errorMessage = document.getElementById('errorMessage');
+
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                errorMessage.textContent = 'Please fill in all required fields.';
+                return false;
+            } else {
+                errorMessage.textContent = '';
+
+                document.getElementById('contactForm').submit();
+                alert('Form submitted! (This is just an example, actual form submission requires server-side processing.)');
+                return false;
+            }
+        }
+    </script>
+</body>
